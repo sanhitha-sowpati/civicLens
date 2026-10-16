@@ -1,0 +1,342 @@
+{
+  "feature_order": [
+    "zone",
+    "road_type",
+    "incident_rate_per_30d",
+    "critical_incident_rate_per_30d",
+    "high_incident_rate_per_30d",
+    "severity_weighted_rate_per_30d",
+    "mean_severity_score",
+    "injury_rate_per_30d",
+    "unresolved_incident_rate_per_30d",
+    "unresolved_incident_share",
+    "incident_count_last_30d",
+    "incident_rate_last_90d",
+    "injury_rate_last_90d",
+    "days_since_last_incident",
+    "complaint_rate_per_30d",
+    "open_complaint_rate_per_30d",
+    "open_complaint_share",
+    "high_priority_complaint_rate_per_30d",
+    "complaint_count_last_30d",
+    "complaint_rate_last_90d",
+    "days_since_last_complaint",
+    "road_condition_score",
+    "pedestrian_activity_score",
+    "near_school",
+    "near_hospital",
+    "population_density_band"
+  ],
+  "categorical_features": [
+    "zone",
+    "road_type"
+  ],
+  "numeric_features": [
+    "incident_rate_per_30d",
+    "critical_incident_rate_per_30d",
+    "high_incident_rate_per_30d",
+    "severity_weighted_rate_per_30d",
+    "mean_severity_score",
+    "injury_rate_per_30d",
+    "unresolved_incident_rate_per_30d",
+    "unresolved_incident_share",
+    "incident_count_last_30d",
+    "incident_rate_last_90d",
+    "injury_rate_last_90d",
+    "days_since_last_incident",
+    "complaint_rate_per_30d",
+    "open_complaint_rate_per_30d",
+    "open_complaint_share",
+    "high_priority_complaint_rate_per_30d",
+    "complaint_count_last_30d",
+    "complaint_rate_last_90d",
+    "days_since_last_complaint",
+    "road_condition_score",
+    "pedestrian_activity_score",
+    "near_school",
+    "near_hospital",
+    "population_density_band"
+  ],
+  "features": [
+    {
+      "name": "zone",
+      "dtype": "categorical",
+      "allowed_values": [
+        "ZONE_01",
+        "ZONE_02",
+        "ZONE_03",
+        "ZONE_04",
+        "ZONE_05",
+        "ZONE_06",
+        "ZONE_07",
+        "ZONE_08",
+        "ZONE_09",
+        "ZONE_10",
+        "ZONE_11",
+        "ZONE_12",
+        "ZONE_13",
+        "ZONE_14",
+        "ZONE_15",
+        "ZONE_16",
+        "ZONE_17",
+        "ZONE_18",
+        "ZONE_19",
+        "ZONE_20"
+      ],
+      "description": "Administrative zone (categorical)."
+    },
+    {
+      "name": "road_type",
+      "dtype": "categorical",
+      "allowed_values": [
+        "Arterial",
+        "Collector",
+        "Highway",
+        "Local",
+        "Residential"
+      ],
+      "description": "Road class (categorical)."
+    },
+    {
+      "name": "incident_rate_per_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 5.0,
+      "missing_allowed": true,
+      "description": "Incidents to date per 30 days of history."
+    },
+    {
+      "name": "critical_incident_rate_per_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 2.0,
+      "missing_allowed": true,
+      "description": "Critical incidents to date per 30 days of history."
+    },
+    {
+      "name": "high_incident_rate_per_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 2.0,
+      "missing_allowed": true,
+      "description": "High-severity incidents to date per 30 days of history."
+    },
+    {
+      "name": "severity_weighted_rate_per_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 25.0,
+      "missing_allowed": true,
+      "description": "Severity-weighted incident burden per 30 days of history."
+    },
+    {
+      "name": "mean_severity_score",
+      "dtype": "numeric",
+      "valid_min": 1,
+      "valid_max": 4,
+      "train_min": 1.0,
+      "train_max": 4.0,
+      "missing_allowed": true,
+      "description": "Mean severity (Low=1 .. Critical=4); missing if no incidents."
+    },
+    {
+      "name": "injury_rate_per_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 4.0,
+      "missing_allowed": true,
+      "description": "Injuries to date per 30 days of history."
+    },
+    {
+      "name": "unresolved_incident_rate_per_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 3.0,
+      "missing_allowed": true,
+      "description": "Incidents unresolved at prediction time, per 30 days of history."
+    },
+    {
+      "name": "unresolved_incident_share",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": 1,
+      "train_min": 0.0,
+      "train_max": 1.0,
+      "missing_allowed": true,
+      "description": "Share of incidents unresolved at prediction time."
+    },
+    {
+      "name": "incident_count_last_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 6.0,
+      "missing_allowed": true,
+      "description": "Incidents in the 30 days before prediction time."
+    },
+    {
+      "name": "incident_rate_last_90d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 5.0,
+      "missing_allowed": true,
+      "description": "Incidents in the last 90 days, per 30 days."
+    },
+    {
+      "name": "injury_rate_last_90d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 4.0,
+      "missing_allowed": true,
+      "description": "Injuries in the last 90 days, per 30 days."
+    },
+    {
+      "name": "days_since_last_incident",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": 90,
+      "train_min": 0.0020833333333333333,
+      "train_max": 90.0,
+      "missing_allowed": true,
+      "description": "Days since latest incident (capped at 90)."
+    },
+    {
+      "name": "complaint_rate_per_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 5.0,
+      "missing_allowed": true,
+      "description": "Complaints to date per 30 days of history."
+    },
+    {
+      "name": "open_complaint_rate_per_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 5.0,
+      "missing_allowed": true,
+      "description": "Complaints open at prediction time, per 30 days of history."
+    },
+    {
+      "name": "open_complaint_share",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": 1,
+      "train_min": 0.0,
+      "train_max": 1.0,
+      "missing_allowed": true,
+      "description": "Share of complaints open at prediction time."
+    },
+    {
+      "name": "high_priority_complaint_rate_per_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 3.0,
+      "missing_allowed": true,
+      "description": "Citizen-flagged High-priority complaints per 30 days."
+    },
+    {
+      "name": "complaint_count_last_30d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 5.0,
+      "missing_allowed": true,
+      "description": "Complaints in the 30 days before prediction time."
+    },
+    {
+      "name": "complaint_rate_last_90d",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": null,
+      "train_min": 0.0,
+      "train_max": 5.0,
+      "missing_allowed": true,
+      "description": "Complaints in the last 90 days, per 30 days."
+    },
+    {
+      "name": "days_since_last_complaint",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": 90,
+      "train_min": 0.0020833333333333333,
+      "train_max": 90.0,
+      "missing_allowed": true,
+      "description": "Days since latest complaint (capped at 90)."
+    },
+    {
+      "name": "road_condition_score",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": 3,
+      "train_min": 0.0,
+      "train_max": 3.0,
+      "missing_allowed": true,
+      "description": "Good=0, Fair=1, Poor=2, Critical=3."
+    },
+    {
+      "name": "pedestrian_activity_score",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": 2,
+      "train_min": 0.0,
+      "train_max": 2.0,
+      "missing_allowed": true,
+      "description": "Low=0, Medium=1, High=2."
+    },
+    {
+      "name": "near_school",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": 1,
+      "train_min": 0.0,
+      "train_max": 1.0,
+      "missing_allowed": true,
+      "description": "1 if near a school."
+    },
+    {
+      "name": "near_hospital",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": 1,
+      "train_min": 0.0,
+      "train_max": 1.0,
+      "missing_allowed": true,
+      "description": "1 if near a hospital."
+    },
+    {
+      "name": "population_density_band",
+      "dtype": "numeric",
+      "valid_min": 0,
+      "valid_max": 4,
+      "train_min": 0.0,
+      "train_max": 4.0,
+      "missing_allowed": true,
+      "description": "Density band 0-4 (edges 5k/10k/15k/20k per km2)."
+    }
+  ],
+  "model_version": "20261016104556-6c5a2cff56"
+}

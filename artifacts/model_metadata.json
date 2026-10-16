@@ -1,0 +1,79 @@
+{
+  "model_version": "20261016104556-6c5a2cff56",
+  "trained_at_utc": "2026-10-16T10:45:56.673540+00:00",
+  "model_class": "catboost.CatBoostRegressor",
+  "catboost_params": {
+    "loss_function": "RMSE",
+    "eval_metric": "RMSE",
+    "iterations": 2000,
+    "learning_rate": 0.03,
+    "depth": 4,
+    "l2_leaf_reg": 10.0,
+    "random_seed": 42,
+    "allow_writing_files": false
+  },
+  "best_iteration": 186,
+  "early_stopping_rounds": 100,
+  "target": "proxy_priority_score",
+  "label_is_proxy": true,
+  "split_cutoffs": {
+    "train": [
+      "2025-01-31 00:00:00",
+      "2025-02-15 00:00:00",
+      "2025-03-02 00:00:00",
+      "2025-03-17 00:00:00",
+      "2025-04-01 00:00:00",
+      "2025-04-16 00:00:00"
+    ],
+    "val": [
+      "2025-06-15 00:00:00",
+      "2025-06-30 00:00:00",
+      "2025-07-15 00:00:00"
+    ],
+    "test": [
+      "2025-09-13 00:00:00",
+      "2025-09-28 00:00:00",
+      "2025-10-13 00:00:00",
+      "2025-10-28 00:00:00"
+    ]
+  },
+  "n_features": 26,
+  "feature_order": [
+    "zone",
+    "road_type",
+    "incident_rate_per_30d",
+    "critical_incident_rate_per_30d",
+    "high_incident_rate_per_30d",
+    "severity_weighted_rate_per_30d",
+    "mean_severity_score",
+    "injury_rate_per_30d",
+    "unresolved_incident_rate_per_30d",
+    "unresolved_incident_share",
+    "incident_count_last_30d",
+    "incident_rate_last_90d",
+    "injury_rate_last_90d",
+    "days_since_last_incident",
+    "complaint_rate_per_30d",
+    "open_complaint_rate_per_30d",
+    "open_complaint_share",
+    "high_priority_complaint_rate_per_30d",
+    "complaint_count_last_30d",
+    "complaint_rate_last_90d",
+    "days_since_last_complaint",
+    "road_condition_score",
+    "pedestrian_activity_score",
+    "near_school",
+    "near_hospital",
+    "population_density_band"
+  ],
+  "data_fingerprint_sha256_10": "6c5a2cff56",
+  "quick_mode": false,
+  "environment": {
+    "python": "3.13.5",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "catboost": "1.2.8",
+    "scikit_learn": "1.8.0"
+  },
+  "disclaimer": "Trained on proxy labels derived from synthetic data; it does not learn actual municipal priorities."
+}

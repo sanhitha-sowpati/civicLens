@@ -1,0 +1,85 @@
+{
+  "model_version": "20261016104556-6c5a2cff56",
+  "target_description": "Proxy priority score (0-100) of the 60 days after the prediction time.",
+  "label_is_proxy": true,
+  "proxy_config": {
+    "window_days": 60,
+    "weights": {
+      "severity_burden": 0.25,
+      "injuries": 0.2,
+      "unresolved_burden": 0.15,
+      "complaint_burden": 0.1,
+      "open_complaints": 0.1,
+      "location_condition": 0.2
+    },
+    "saturation_k": {
+      "severity_burden": 6.0,
+      "injuries": 1.5,
+      "unresolved_burden": 3.0,
+      "complaint_burden": 2.5,
+      "open_complaints": 1.5
+    },
+    "location_condition_weights": {
+      "road_condition": 0.4,
+      "pedestrian_activity": 0.2,
+      "near_school": 0.15,
+      "near_hospital": 0.1,
+      "density_band": 0.15
+    }
+  },
+  "snapshot_config": {
+    "horizon_days": 60,
+    "step_days": 15,
+    "min_history_days": 30,
+    "val_start_fraction": 0.5,
+    "test_start_fraction": 0.8,
+    "recent_window_days": 30,
+    "long_recent_window_days": 90,
+    "days_since_cap": 90
+  },
+  "severity_weight": {
+    "Low": 1.0,
+    "Medium": 2.0,
+    "High": 4.0,
+    "Critical": 8.0
+  },
+  "road_condition_score": {
+    "Good": 0,
+    "Fair": 1,
+    "Poor": 2,
+    "Critical": 3
+  },
+  "pedestrian_activity_score": {
+    "Low": 0,
+    "Medium": 1,
+    "High": 2
+  },
+  "density_band_edges": [
+    5000,
+    10000,
+    15000,
+    20000
+  ],
+  "level_quantiles": {
+    "Medium": 0.5,
+    "High": 0.8,
+    "Critical": 0.95
+  },
+  "level_thresholds": {
+    "Medium": 30.222888282558383,
+    "High": 32.572875544677714,
+    "Critical": 35.42272068165462
+  },
+  "score_clip_range": [
+    0,
+    100
+  ],
+  "data_start": "2025-01-01 00:00:00",
+  "default_as_of": "2025-12-31 23:50:00",
+  "excluded_from_features": [
+    "location_id",
+    "latitude",
+    "longitude",
+    "population_density_per_km2 (replaced by coarse band)"
+  ]
+}

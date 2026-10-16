@@ -1,0 +1,105 @@
+{
+  "data_dir": "/mnt/data/civiclens_final/smart_city_priority/data",
+  "files": {
+    "locations": {
+      "rows_raw": 1000,
+      "rows_valid": 1000
+    },
+    "incidents": {
+      "rows_raw": 10000,
+      "rows_valid": 10000
+    },
+    "public_complaints": {
+      "rows_raw": 8000,
+      "rows_valid": 8000
+    }
+  },
+  "actions": {
+    "locations": {
+      "duplicate_location_ids_dropped": 0,
+      "invalid_coordinates_blanked": 0,
+      "unknown_road_condition": 0,
+      "unknown_pedestrian_activity": 0
+    },
+    "incidents": {
+      "duplicate_incident_ids_dropped": 0,
+      "invalid_timestamps_dropped": 0,
+      "invalid_severity_dropped": 0,
+      "unknown_location_ids_dropped": 0,
+      "missing_injuries_set_to_zero": 0,
+      "negative_injuries_dropped": 0,
+      "missing_resolved_treated_unresolved": 0,
+      "negative_resolution_hours_blanked": 0
+    },
+    "public_complaints": {
+      "duplicate_complaint_ids_dropped": 0,
+      "invalid_timestamps_dropped": 0,
+      "unknown_location_ids_dropped": 0,
+      "unknown_priority_set_to_Normal": 0,
+      "unknown_status_treated_open": 0,
+      "negative_days_to_resolution_blanked": 0
+    }
+  },
+  "missing_values": {
+    "locations": {
+      "location_id": 0,
+      "zone": 0,
+      "road_type": 0,
+      "road_condition": 0,
+      "population_density_per_km2": 0,
+      "near_school": 0,
+      "near_hospital": 0,
+      "pedestrian_activity": 0,
+      "latitude": 0,
+      "longitude": 0
+    },
+    "incidents": {
+      "incident_id": 0,
+      "location_id": 0,
+      "timestamp": 0,
+      "incident_type": 0,
+      "severity": 0,
+      "injuries": 0,
+      "reported_by": 0,
+      "resolved": 0,
+      "resolution_hours": 0
+    },
+    "public_complaints": {
+      "complaint_id": 0,
+      "location_id": 0,
+      "created_at": 0,
+      "category": 0,
+      "priority_reported": 0,
+      "status": 0,
+      "days_to_resolution": 0
+    }
+  },
+  "time_range": {
+    "incidents": [
+      "2025-01-01 00:29:00",
+      "2025-12-31 23:50:00"
+    ],
+    "complaints": [
+      "2025-01-01 00:03:00",
+      "2025-12-31 21:31:00"
+    ]
+  },
+  "vocabularies": {
+    "incident_types": [
+      "Blocked drain",
+      "Collision",
+      "Flooding",
+      "Pothole",
+      "Signal failure",
+      "Streetlight outage"
+    ],
+    "complaint_categories": [
+      "Drainage",
+      "Lighting",
+      "Pedestrian safety",
+      "Road damage",
+      "Traffic",
+      "Waste"
+    ]
+  }
+}

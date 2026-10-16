@@ -1,0 +1,77 @@
+{
+  "target": "proxy_priority_score (0-100), NOT verified municipal decisions",
+  "train": {
+    "n_rows": 6000,
+    "catboost": {
+      "mae": 11.364805442559213,
+      "rmse": 13.821246233569147,
+      "r2": 0.10801911134752296
+    },
+    "baseline_train_mean": {
+      "mae": 12.010592629504252,
+      "rmse": 14.634214943678236,
+      "r2": 0.0
+    },
+    "baseline_persistence_prev_60d": {
+      "mae": 16.034258991015218,
+      "rmse": 20.053048272014248,
+      "r2": -0.8776815520125778
+    }
+  },
+  "val": {
+    "n_rows": 3000,
+    "catboost": {
+      "mae": 11.441748122559627,
+      "rmse": 13.88198809567047,
+      "r2": 0.0595234619860564,
+      "spearman": 0.22925205645767388,
+      "top5pct_overlap": 0.09333333333333334,
+      "top5pct_overlap_by_chance": 0.05
+    },
+    "baseline_train_mean": {
+      "mae": 11.716384830467483,
+      "rmse": 14.315409657547574,
+      "r2": -0.00012018262557877968
+    },
+    "baseline_persistence_prev_60d": {
+      "mae": 16.382722508049998,
+      "rmse": 20.404751165475624,
+      "r2": -1.0319229534753087,
+      "spearman": 0.029793157248774283,
+      "top5pct_overlap": 0.05333333333333334,
+      "top5pct_overlap_by_chance": 0.05
+    }
+  },
+  "test": {
+    "n_rows": 4000,
+    "catboost": {
+      "mae": 11.787688883910754,
+      "rmse": 14.301620745110544,
+      "r2": 0.035782073515602364,
+      "spearman": 0.18361115242098508,
+      "top5pct_overlap": 0.10500000000000001,
+      "top5pct_overlap_by_chance": 0.05
+    },
+    "baseline_train_mean": {
+      "mae": 11.931896929705063,
+      "rmse": 14.56459442236999,
+      "r2": -3.4035378917440795e-06
+    },
+    "baseline_persistence_prev_60d": {
+      "mae": 15.889086632239971,
+      "rmse": 19.81216211922322,
+      "r2": -0.8504119883789081,
+      "spearman": 0.06514355233160457,
+      "top5pct_overlap": 0.12000000000000001,
+      "top5pct_overlap_by_chance": 0.05
+    }
+  },
+  "label_stats_train": {
+    "mean": 30.378729423530874,
+    "std": 14.635434614051125,
+    "min": 0.0,
+    "max": 81.48939610993666
+  },
+  "static_condition_component_std": 3.4132800494500524,
+  "best_iteration": 186
+}
