@@ -45,7 +45,14 @@ pip install -r requirements.txt
 python scripts/train.py            # trains CatBoost, writes artifacts/ and reports/
 python -m unittest discover -s tests -t . -v      # or: pytest
 python scripts/rank.py --top 20    # print the current ranking
-uvicorn priority_model.api:create_app --factory --port 8000   # run the API
+python -m uvicorn priority_model.api:create_app --factory --host 127.0.0.1 --port 8000
+```
+
+If `uvicorn` is not recognized as a shell command, use the Python module form above. If port
+`8000` is already in use, choose another port such as:
+
+```bash
+python -m uvicorn priority_model.api:create_app --factory --host 127.0.0.1 --port 8001
 ```
 
 `train.py --quick` uses fewer iterations (smoke tests only). Training is **always an explicit
