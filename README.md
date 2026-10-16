@@ -1,8 +1,37 @@
-# Where Should We Fix First? - CatBoost priority model
+# CivicLens CatBoost priority model
 
-Ranks road/infrastructure locations by need for attention and re-scores a location when a
-fixer verifies a new citizen report. Built on `locations.csv`, `incidents.csv`,
-`public_complaints.csv` (joined on `location_id`).
+CivicLens is a municipal operations dashboard that helps public works teams decide which
+neighbourhoods and road segments need attention first. It combines historical incident data,
+public complaints, and a CatBoost ranking model to surface the highest-need locations, then
+re-scores them when a fixer verifies a new citizen report.
+
+## Problem and target user
+
+Cities often receive fragmented signals about infrastructure risk: road defects, injuries,
+service complaints, and social media reports all arrive in separate streams. Without a shared
+triage view, crews can spend time reacting to the loudest issue instead of the most urgent one.
+
+CivicLens is built for:
+
+- Municipal public works and street maintenance teams
+- Fixer / operations reviewers who verify citizen submissions
+- City analysts evaluating where to deploy scarce repair resources first
+- Citizen service teams that need to turn local reports into actionable repair priorities
+
+The product is designed to turn scattered, noisy evidence into a single, explainable priority
+ranking that helps teams focus on the locations with the greatest estimated need.
+
+## What the product looks like
+
+![CivicLens dashboard preview](docs/README/civiclens-dashboard.svg)
+
+## Sample model outputs
+
+These assets show the model's output and explanatory diagnostics after training:
+
+![Predicted vs actual scores](reports/actual_vs_predicted.png)
+
+![Feature importance](reports/feature_importance.png)
 
 > **Read this first.** The data has **no genuine priority / repair-urgency / municipal-decision
 > field** (`priority_reported` is a citizen-chosen flag, not an official decision). The model is
